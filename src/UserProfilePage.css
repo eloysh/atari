@@ -1,0 +1,93 @@
+/* UserProfilePage.css */
+
+/* Стили для мобильных устройств */
+@media only screen and (max-width: 430px) {
+  .user-avatar img {
+    width: 100px; /* Уменьшаем размер аватара для мобильных устройств */
+    height: 100px;
+  }
+}
+
+/* Стили для iPhone 14 Pro Max */
+@media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+  .user-avatar img {
+    width: 150px; /* Специфические стили для iPhone 14 Pro Max */
+    height: 150px;
+  }
+}
+
+/* UserProfilePage.css */
+.user-profile-info {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.user-profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.user-profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  margin-right: 20px;
+}
+
+.user-avatar img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+.user-avatar input[type="file"] {
+  margin-top: 10px;
+}
+
+.user-details {
+  flex-grow: 1;
+}
+
+.user-details h2 {
+  margin-bottom: 10px;
+}
+
+.user-settings {
+  margin-top: 20px;
+}
+
+.user-settings h2 {
+  margin-bottom: 10px;
+}
+
+.user-settings-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.user-settings-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.user-settings-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-settings-form button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,49 @@
+/* SearchResultPage.css */
+/* Стили для мобильных устройств */
+@media only screen and (max-width: 600px) {
+  /* Ваши стили для мобильных устройств */
+}
+
+/* Стили для планшетов и мобильных устройств в альбомной ориентации */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  /* Ваши стили для планшетов и мобильных устройств в альбомной ориентации */
+}
+
+/* Стили для планшетов и устройств среднего размера */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  /* Ваши стили для планшетов и устройств среднего размера */
+}
+.search-result-page {
+    padding: 20px;
+  }
+  .h1 {
+    text-align: center;
+  }
+  .search-result-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .search-result-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .property-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .property-description {
+    margin-bottom: 10px;
+  }
+  
+  .property-price {
+    font-weight: bold;
+  }
+  
+  .property-image {
+    max-width: 100%;
+    height: auto;
+  }

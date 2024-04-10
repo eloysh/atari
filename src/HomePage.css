@@ -1,0 +1,218 @@
+.homepage-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.homepage-heading {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.property-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.property-card {
+  width: calc(33.33% - 20px); /* Ширина каждой карточки будет 33.33% от ширины родительского контейнера минус внешние отступы */
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+
+
+
+.property-card img {
+  flex-grow: 1; /* Растягиваем изображение на всю доступную высоту */
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.property-card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.property-card p {
+  color: #666;
+}
+
+.property-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  max-width: 50%;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.gallery {
+  position: relative;
+}
+
+.gallery img {
+  width: 80%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.prev-btn {
+  left: 5%; /* Позиционирование стрелочки влево */
+  transform: translate(-50%, -50%); /* Корректировка позиции стрелочки */
+}
+
+.next-btn {
+  right: 5%; /* Позиционирование стрелочки вправо */
+  transform: translate(50%, -50%); /* Корректировка позиции стрелочки */
+}
+
+
+.property-info {
+  margin-top: 20px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  background-color: #ccc;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabs button.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.buy-btn {
+  background-color: #4caf50;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin-top: 20px;
+}
+
+.buy-btn:hover {
+  background-color: #45a049;
+}
+
+/* Для мобильных устройств */
+@media only screen and (max-width: 844px) {
+  .property-cards {
+    flex-direction: column; /* Отображение карточек в столбец */
+  }
+
+  .property-card {
+    width: 90%; /* Показывать карточки на всю ширину экрана */
+  }
+
+  .modal-content {
+    width: 90%;
+    max-width: 90%; /* Максимальная ширина для мобильных устройств */
+  }
+
+  .close {
+    font-size: 20px; /* Уменьшение размера кнопки закрытия */
+  }
+
+  .gallery img {
+    width: 90%; /* Уменьшение размера изображения галереи */
+  }
+
+  .prev-btn,
+  .next-btn {
+    font-size: 16px; /* Уменьшение размера кнопок переключения */
+    padding: 8px; /* Уменьшение отступов кнопок */
+  }
+
+  .property-info {
+    margin-top: 10px; /* Уменьшение верхнего отступа информации о недвижимости */
+  }
+
+  .tabs {
+    flex-direction: column; /* Отображение вкладок в столбец */
+    align-items: center; /* Выравнивание вкладок по центру */
+  }
+
+  .tabs button {
+    margin-bottom: 10px; /* Добавление отступа между вкладками */
+  }
+}
+@media only screen and (min-width: 845px) {
+  .property-card {
+    display: inline-block; /* Отображаем карточки в строчку */
+    width: calc(33.33% - 20px); /* Устанавливаем равную ширину с учетом отступов */
+    margin-right: 20px; /* Добавляем правый отступ между карточками */
+    margin-bottom: 20px; /* Отступ снизу для карточек */
+    vertical-align: top; /* Выравниваем по верхнему краю */
+    box-sizing: border-box; /* Учитываем padding и border в расчете ширины */
+  }
+}

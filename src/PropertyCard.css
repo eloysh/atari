@@ -1,0 +1,60 @@
+/* Стили для мобильных устройств */
+@media only screen and (max-width: 600px) {
+  /* Ваши стили для мобильных устройств */
+}
+
+/* Стили для планшетов и мобильных устройств в альбомной ориентации */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  /* Ваши стили для планшетов и мобильных устройств в альбомной ориентации */
+}
+
+/* Стили для планшетов и устройств среднего размера */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  /* Ваши стили для планшетов и устройств среднего размера */
+}
+
+.property-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.property-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.property-card p {
+  margin: 0;
+  color: #666;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #555;
+}
+
+.property-card .price {
+  font-weight: bold;
+}
+
+.property-card .location {
+  font-style: italic;
+  color: #888;
+}
+.property-card h3 {
+  cursor: pointer;
+}
+
+.property-image {
+  width: 100%; /* Устанавливаем ширину изображения на 100% */
+  height: auto; /* Поддерживаем соотношение сторон */
+  max-height: 200px; /* Устанавливаем максимальную высоту изображения */
+  object-fit: cover; /* Заполняем контейнер изображением, сохраняя соотношение сторон и обрезая излишки */
+}

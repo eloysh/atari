@@ -1,0 +1,59 @@
+/* Menu.css */
+/* Стили для мобильных устройств */
+@media only screen and (max-width: 430px) {
+  .menu-container {
+    padding: 2px 2px; /* Уменьшаем отступы внутри меню */
+    max-width: 90%; /* Уменьшаем максимальную ширину для мобильных устройств */
+  }
+
+  .menu-container ul {
+    flex-wrap: wrap; /* Разрешаем перенос элементов списка на новую строку */
+    justify-content: center; /* Выравниваем элементы списка по центру */
+  }
+
+  .menu-container li {
+    margin: 5px; /* Уменьшаем отступ между пунктами меню */
+  }
+}
+/* Menu.css */
+
+.menu-container {
+  background-color: #4d6176; /* Цвет фона меню */
+  padding: 20px;
+}
+
+.menu-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-container ul li {
+  margin-right: 10px;
+}
+
+.menu-container ul li:last-child {
+  margin-right: 0;
+}
+
+.menu-container ul li a {
+  color: #fff; /* Цвет текста ссылок */
+  text-decoration: none;
+  padding: 10px 20px; /* Отступы вокруг текста ссылок */
+  border-radius: 5px; /* Закругленные углы для ссылок */
+  transition: background-color 0.3s;
+}
+
+.menu-container ul li a:hover {
+  background-color: #3490ec; /* Цвет фона при наведении */
+}
+
+.menu-logo {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}

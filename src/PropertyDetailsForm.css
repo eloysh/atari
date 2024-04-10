@@ -1,0 +1,32 @@
+/* PropertyDetailsForm.css */
+.property-details-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    max-width: 90%;
+    width: 600px;
+  }
+  
+  .property-details-form img {
+    max-width: 25%; /* Устанавливаем максимальную ширину изображения в 100% */
+    height: auto; /* Автоматически подстраиваем высоту изображения */
+  }
+  
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+  }
+  

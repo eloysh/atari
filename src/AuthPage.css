@@ -1,0 +1,100 @@
+/* AuthPage.css */
+
+/* Общие стили для страницы */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa; /* Цвет фона */
+}
+
+.auth-container {
+  width: 90%; /* Ширина контейнера */
+  max-width: 400px; /* Максимальная ширина контейнера */
+  padding: 20px;
+  background-color: #ffffff; /* Цвет фона контейнера */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень контейнера */
+}
+
+.auth-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center; /* Выравнивание заголовка по центру */
+}
+
+.auth-form {
+  margin-bottom: 20px;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ced4da; /* Цвет рамки инпутов */
+  border-radius: 4px;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff; /* Цвет кнопки */
+  color: #ffffff; /* Цвет текста кнопки */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background-color: #0056b3; /* Изменение цвета кнопки при наведении */
+}
+
+.auth-divider {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: space-around; /* Выравнивание кнопок по горизонтали */
+}
+
+.social-buttons button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.social-buttons button img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* Медиазапросы для адаптивного дизайна */
+
+/* Стили для мобильных устройств */
+@media only screen and (max-width: 600px) {
+  .auth-container {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+/* Стили для планшетов и мобильных устройств в альбомной ориентации */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+  .auth-container {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+/* Стили для планшетов и устройств среднего размера */
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+  .auth-container {
+    width: 90%;
+    max-width: 500px;
+  }
+}
