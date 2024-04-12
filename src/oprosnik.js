@@ -15,10 +15,13 @@ function Oprosnik({ formData }) {
     const [step, setStep] = useState(1);
     const totalSteps = 8;
     const [constructionTiming, setConstructionTiming] = useState('');
-    const [progressPercentage, setProgressPercentage] = useState(0); 
+    const [progressPercentage, setProgressPercentage] = useState(0);
+    const [hasLand, setHasLand] = useState(null);
 
-    // Определение переменной hasLand
-    const [hasLand] = useState(null);
+    const handleLandChange = (event) => {
+        setHasLand(event.target.value === 'yes');
+    };
+
 
     const isFormValid = () => {
         return name.trim() !== '' && phoneNumber.trim() !== '';
@@ -57,12 +60,15 @@ function Oprosnik({ formData }) {
         Желаемая комплектация: ${selectedOptionHouse}
         Способы оплаты: ${paymentMethod.join(', ')}
         Удалённость от Владивостока: ${rangeValue} км`;
-    
+
         const whatsappLink = `https://api.whatsapp.com/send?phone=79841925069&text=${encodeURIComponent(message)}`;
-        
-    
-    window.open(whatsappLink);
+
+
+        window.open(whatsappLink);
+        setShowConfirmation(true);
     };
+    const [showConfirmation, setShowConfirmation] = useState(false);
+
 
     const handleNextStep = () => {
         if (step < 8) {
@@ -109,15 +115,16 @@ function Oprosnik({ formData }) {
     const handleNameChange = (event) => {
         setName(event.target.value);
     };
-   
+
     const handleFormSubmit = () => {
         // Ваша логика обработки формы
         if (isFormValid()) {
-
             // Perform form submission logic here
             handleSendWhatsApp();
             // Set isFormSubmitted to true after successful form submission
             setIsFormSubmitted(true);
+            // Показываем подтверждение отправки формы
+            setShowConfirmation(true);
         } else {
             alert('Пожалуйста, заполните все поля перед отправкой.');
         }
@@ -200,17 +207,16 @@ function Oprosnik({ formData }) {
                             <div className="step-title">У вас есть земельный участок?</div>
                             <div className="radio-group">
                                 <label>
-                                    <input type="radio" name="land" value="yes" />
+                                    <input type="radio" name="land" value="yes" onChange={handleLandChange} />
                                     Да
                                 </label>
                                 <label>
-                                    <input type="radio" name="land" value="no" />
+                                    <input type="radio" name="land" value="no" onChange={handleLandChange} />
                                     Нет
                                 </label>
                             </div>
                         </div>
                     )}
-
 
                     {step === 4 && (
                         <div className="step-content step active">
@@ -412,6 +418,9 @@ function Oprosnik({ formData }) {
                         <button onClick={handleNextStep}>Далее</button>
                     )}
                 </div>
+            )}
+            {showConfirmation && (
+                <div className="confirmation-message">Форма успешно отправлена!</div>
             )}
         </div>
     );
