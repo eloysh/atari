@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './HomePage.css';
 import Oprosnik from './oprosnik';
+import Straniza from './Straniza';
 const HomePage = () => {
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -137,15 +138,19 @@ const HomePage = () => {
 
   return (
     <div>
-      <div className="homepage-container">
-      <h1 className="homepage-heading">Пройди опрос и получи бесплатную консультацию!</h1>
-
-        <Oprosnik />
-
-        <div className="property-list">
-
-        </div>
+    <div className="container">
+      
+      <Straniza />
+      <div className="tn-atom" style={{ top: '160px', left: '128px', width: '185px', height: '40px', zoom: '1.016' }}>
+        
       </div>
+    </div>
+
+    <div className="homepage-container">
+      <h1 className="homepage-heading">Пройди опрос и получи бесплатную консультацию!</h1>
+      <Oprosnik />
+      <div className="property-list"></div>
+    </div>
       <div className="homepage-container">
 
       <h1 className="homepage-heading">Добро пожаловать на главную страницу нашего приложения по недвижимости</h1>
@@ -237,6 +242,7 @@ const HomePage = () => {
       </div>
       
     </div>
+    
   );
 };
 

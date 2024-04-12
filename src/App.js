@@ -1,5 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Straniza from './Straniza';
+import OtherPage from './OtherPage';
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Straniza} />
+        <Route path="/mortgage" component={OtherPage} />
+      </Switch>
+    </Router>
+  );
+}
+
+export default App;
