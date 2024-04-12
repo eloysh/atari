@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './oprosnik.css';
 
-
 function Oprosnik({ formData }) {
     const [selectedOption, setSelectedOption] = useState(null);
     const [houseArea, setHouseArea] = useState(50);
@@ -9,45 +8,40 @@ function Oprosnik({ formData }) {
     const [budget, setBudget] = useState(2000000);
     const [selectedOptionHouse, setSelectedOptionHouse] = useState('');
     const [name, setName] = useState('');
-    const [phoneNumber] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
     const [mortgageApproved,] = useState(false);
     const [paymentMethod, setPaymentMethod] = useState([]);
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
     const [step, setStep] = useState(1);
-    // Объявление переменной totalSteps
     const totalSteps = 8;
-
     const [constructionTiming, setConstructionTiming] = useState('');
-    // Позже в коде используйте переменную totalSteps
-    const progressPercentage = Math.ceil((step / totalSteps) * 100);
+    const [progressPercentage, setProgressPercentage] = useState(0); 
+
+    // Определение переменной hasLand
+    const [hasLand] = useState(null);
 
     const isFormValid = () => {
         return name.trim() !== '' && phoneNumber.trim() !== '';
-    };
-
-   
-    const handlePhoneNumberChange = (value) => {
-        const phoneNumberRegex = /^\d{10}$/;
-        const onlyNums = value.replace(/[^\d]/g, '');
-
-        if (onlyNums.match(phoneNumberRegex)) {
-            return onlyNums.replace(/(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, '+7 $2 $3-$4-$5');
-        }
-
-        return value;
     };
 
     const handleBudgetChange = (e) => {
         setBudget(parseInt(e.target.value));
     };
 
-    const [hasLand] = useState(null);
-    const handlePaymentMethodChange = (e) => {
-        const value = e.target.value;
-        if (paymentMethod.includes(value)) {
-            setPaymentMethod(paymentMethod.filter(method => method !== value));
-        } else {
+    const handlePhoneNumberChange = (event) => {
+        const newValue = event.target.value;
+        if (typeof newValue === 'string') {
+            const sanitizedValue = newValue.replace(/\D/g, '');
+            setPhoneNumber(sanitizedValue);
+        }
+    };
+
+    const handlePaymentMethodChange = (event) => {
+        const { value, checked } = event.target;
+        if (checked) {
             setPaymentMethod([...paymentMethod, value]);
+        } else {
+            setPaymentMethod(paymentMethod.filter(item => item !== value));
         }
     };
     const handleSendWhatsApp = () => {
@@ -115,7 +109,6 @@ function Oprosnik({ formData }) {
     const handleNameChange = (event) => {
         setName(event.target.value);
     };
-
    
     const handleFormSubmit = () => {
         // Ваша логика обработки формы
@@ -131,24 +124,16 @@ function Oprosnik({ formData }) {
     };
 
 
-    const [, setProgressPercentage] = useState(0);
-
-
-
-
     useEffect(() => {
-        // Вычисление процента завершенности опросника
         const progressPercentage = Math.ceil((step / totalSteps) * 100);
-        // Обновление состояния для отображения процента загрузки
         setProgressPercentage(progressPercentage);
-    }, [step, totalSteps]); // Пересчет процента загрузки при изменении шага или общего количества шагов
+    }, [step, totalSteps]);
+
     const renderCheckbox = (isChecked) => {
         return (
             <input type="checkbox" checked={isChecked} />
         );
     };
-
-
     return (
         <div>
 
