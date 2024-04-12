@@ -301,3 +301,59 @@ input[type="radio"] {
     text-align: center; /* Выравниваем текст по центру */
     margin-top: 5px; /* Отступ сверху от изображения */
 }
+/* oprosnik.css */
+
+/* Original styles for progress-bar */
+.progress-bar {
+    width: 100%;
+    
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    display: flex;
+    height: 100%;
+    background-color: #00ff40;
+    transition: width 0.3s ease;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: stretch;
+    justify-content: center;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .progress-bar {
+        
+        border-radius: 8px; /* Adjust border radius */
+    }
+    .progress-text {
+        font-size: 12px; /* Decrease font size for smaller screens */
+    }
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    /* Стили для контейнера шага на мобильных устройствах */
+    .step-content {
+        flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    }
+
+    /* Стили для фотографий на мобильных устройствах */
+    .option {
+        width: calc(50% - 20px); /* Ширина фотографии с учетом отступов */
+        margin-right: 20px; /* Отступ между фотографиями */
+        margin-bottom: 20px; /* Отступ снизу */
+    }
+}

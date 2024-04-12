@@ -138,7 +138,7 @@ const HomePage = () => {
   return (
     <div>
       <div className="homepage-container">
-      <h1 className="homepage-heading">Добро пожаловать на главную страницу нашего приложения по недвижимости</h1>
+      <h1 className="homepage-heading">Пройди опрос и получи бесплатную консультацию!</h1>
 
         <Oprosnik />
 
@@ -235,6 +235,7 @@ const HomePage = () => {
           </div>
         )}
       </div>
+      
     </div>
   );
 };
