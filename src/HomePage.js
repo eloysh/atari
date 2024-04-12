@@ -6,7 +6,7 @@ const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isBuyFormOpen, setIsBuyFormOpen] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
-  const [activeTab, setActiveTab] = useState('characteristics'); 
+  const [activeTab, setActiveTab] = useState('characteristics');
   const [desiredArea, setDesiredArea] = useState('');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -136,106 +136,107 @@ const HomePage = () => {
   };
 
   return (
-   <div>
-    <div className="homepage-container">
-      <h1 className="homepage-heading"></h1>
+    <div>
+      <div className="homepage-container">
+      <h1 className="homepage-heading">Добро пожаловать на главную страницу нашего приложения по недвижимости</h1>
 
-      <Oprosnik />
+        <Oprosnik />
 
-      <div className="property-list">
-       
+        <div className="property-list">
+
+        </div>
       </div>
-    </div>
-    <div className="homepage-container">
+      <div className="homepage-container">
 
-  <h1 className="homepage-heading">Добро пожаловать на главную страницу нашего приложения по недвижимости</h1>
-  <div className="property-list">
-    <h2>Популярные предложения</h2>
-    
-        <div className="property-cards">
-          {properties.map((property, index) => (
-            <div key={property.id} className="property-card">
-              <h3 onClick={() => handleTitleClick(property)}>{property.title}</h3>
-              <p>{property.description}</p>
-              <p>{property.price}</p>
-              <img
-                src={property.images[0]}
-                alt="Property"
-                onClick={() => handleTitleClick(property)}
-                className="zoom-image"
-              />
-              <button className="calculate-btn" onClick={() => handleCalculate(index)}>
-                Подробнее
-              </button>
-              {isOpen && !isBuyFormOpen && (
-                <div className="modal" id="myModal">
-                  <div className="modal-content">
-                    <span className="close" onClick={handleCloseForm}>&times;</span>
-                    <div className="gallery">
-                      <img src={selectedProperty.images[imageIndex]} alt="Property" />
-                      <button className="prev-btn" onClick={handlePrevImage}>{'<'}</button>
-                      <button className="next-btn" onClick={handleNextImage}>{'>'}</button>
-                    </div>
-                    <div className="property-info">
-                      <h3>{selectedProperty.title}</h3>
-                      {activeTab === 'characteristics' && <p>{selectedProperty.characteristics}</p>}
-                      {activeTab === 'projectComposition' && <p>{selectedProperty.projectComposition}</p>}
-                      {activeTab === 'payment' && <p>{selectedProperty.payment}</p>}
-                      {activeTab === 'terms' && <p>{selectedProperty.terms}</p>}
-                      <div className="tabs">
-                        <button className={activeTab === 'characteristics' ? 'active' : ''} onClick={() => setActiveTab('characteristics')}>Характеристики</button>
-                        <button className={activeTab === 'projectComposition' ? 'active' : ''} onClick={() => setActiveTab('projectComposition')}>Состав проекта</button>
-                        <button className={activeTab === 'payment' ? 'active' : ''} onClick={() => setActiveTab('payment')}>Оплата</button>
-                        <button className={activeTab === 'terms' ? 'active' : ''} onClick={() => setActiveTab('terms')}>Сроки</button>
+      <h1 className="homepage-heading">Добро пожаловать на главную страницу нашего приложения по недвижимости</h1>
+
+        <div className="property-list">
+          <h2>Популярные предложения</h2>
+
+          <div className="property-cards">
+            {properties.map((property, index) => (
+              <div key={property.id} className="property-card">
+                <h3 onClick={() => handleTitleClick(property)}>{property.title}</h3>
+                <p>{property.description}</p>
+                <p>{property.price}</p>
+                <img
+                  src={property.images[0]}
+                  alt="Property"
+                  onClick={() => handleTitleClick(property)}
+                  className="zoom-image"
+                />
+                <button className="calculate-btn" onClick={() => handleCalculate(index)}>
+                  Подробнее
+                </button>
+                {isOpen && !isBuyFormOpen && (
+                  <div className="modal" id="myModal">
+                    <div className="modal-content">
+                      <span className="close" onClick={handleCloseForm}>&times;</span>
+                      <div className="gallery">
+                        <img src={selectedProperty.images[imageIndex]} alt="Property" />
+                        <button className="prev-btn" onClick={handlePrevImage}>{'<'}</button>
+                        <button className="next-btn" onClick={handleNextImage}>{'>'}</button>
                       </div>
-                      <button className="buy-btn" onClick={handleOpenBuyForm}>Рассчитать проект</button>
+                      <div className="property-info">
+                        <h3>{selectedProperty.title}</h3>
+                        {activeTab === 'characteristics' && <p>{selectedProperty.characteristics}</p>}
+                        {activeTab === 'projectComposition' && <p>{selectedProperty.projectComposition}</p>}
+                        {activeTab === 'payment' && <p>{selectedProperty.payment}</p>}
+                        {activeTab === 'terms' && <p>{selectedProperty.terms}</p>}
+                        <div className="tabs">
+                          <button className={activeTab === 'characteristics' ? 'active' : ''} onClick={() => setActiveTab('characteristics')}>Характеристики</button>
+                          <button className={activeTab === 'projectComposition' ? 'active' : ''} onClick={() => setActiveTab('projectComposition')}>Состав проекта</button>
+                          <button className={activeTab === 'payment' ? 'active' : ''} onClick={() => setActiveTab('payment')}>Оплата</button>
+                          <button className={activeTab === 'terms' ? 'active' : ''} onClick={() => setActiveTab('terms')}>Сроки</button>
+                        </div>
+                        <button className="buy-btn" onClick={handleOpenBuyForm}>Рассчитать проект</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-      {isOpen && isBuyFormOpen && (
-        <div className="modal" id="myModal">
-          <div className="modal-content">
-            <span className="close" onClick={handleCloseBuyForm}>&times;</span>
-            <h2>Рассчитайте стоимость строительства дома</h2>
-            <p>Заполните короткую форму и наш специалист свяжется с вами и назовет ориентировочную стоимость</p>
-
-            <div className="form-group">
-              <label htmlFor="have_project">У вас уже есть проект дома?</label><br />
-              <input type="radio" id="yes" name="have_project" value="yes" onChange={(e) => setHaveProject(e.target.value)} required />
-              <label htmlFor="yes">Да</label><br />
-              <input type="radio" id="no" name="have_project" value="no" onChange={(e) => setHaveProject(e.target.value)} required />
-              <label htmlFor="no">Нет</label><br />
-            </div>
-            <div className="form-group">
-              <label htmlFor="area">Укажите желаемую площадь дома в кв.м:</label>
-              <input type="number" id="area" name="area" value={desiredArea} onChange={(e) => setDesiredArea(e.target.value)} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="name">Имя:</label>
-              <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="phone">Телефон:</label>
-              <input type="tel" id="phone" name="phone" value={phone} onChange={(e) => setPhone(e.target.value)} required />
-            </div>
-
-            <form action="https://api.whatsapp.com/send" method="get">
-              <input type="hidden" name="phone" value="+79841925069" />
-              <input type="hidden" name="text" value={`Данные формы:\nУ вас есть проект дома: ${haveProject}\nПлощадь дома: ${desiredArea}\nИмя: ${name}\nТелефон: ${phone}`} />
-              <button type="submit" className="submit-btn">Рассчитать</button>
-            </form>
-
+                )}
+              </div>
+            ))}
           </div>
         </div>
-      )}
+        {isOpen && isBuyFormOpen && (
+          <div className="modal" id="myModal">
+            <div className="modal-content">
+              <span className="close" onClick={handleCloseBuyForm}>&times;</span>
+              <h2>Рассчитайте стоимость строительства дома</h2>
+              <p>Заполните короткую форму и наш специалист свяжется с вами и назовет ориентировочную стоимость</p>
+
+              <div className="form-group">
+                <label htmlFor="have_project">У вас уже есть проект дома?</label><br />
+                <input type="radio" id="yes" name="have_project" value="yes" onChange={(e) => setHaveProject(e.target.value)} required />
+                <label htmlFor="yes">Да</label><br />
+                <input type="radio" id="no" name="have_project" value="no" onChange={(e) => setHaveProject(e.target.value)} required />
+                <label htmlFor="no">Нет</label><br />
+              </div>
+              <div className="form-group">
+                <label htmlFor="area">Укажите желаемую площадь дома в кв.м:</label>
+                <input type="number" id="area" name="area" value={desiredArea} onChange={(e) => setDesiredArea(e.target.value)} required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="name">Имя:</label>
+                <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+              </div>
+
+              <form action="https://api.whatsapp.com/send" method="get">
+                <input type="hidden" name="phone" value="+79841925069" />
+                <input type="hidden" name="text" value={`Данные формы:\nУ вас есть проект дома: ${haveProject}\nПлощадь дома: ${desiredArea}\nИмя: ${name}\nТелефон: ${phone}`} />
+                <button type="submit" className="submit-btn">Рассчитать</button>
+              </form>
+
+            </div>
+          </div>
+        )}
+      </div>
     </div>
-    </div>
-    );
-  };
+  );
+};
 
 export default HomePage;
