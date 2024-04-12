@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import './oprosnik.css'; // Подключаем стили
-
+import './oprosnik.css'; 
 
 function Oprosnik({ formData }) {
-    // eslint-disable-next-line no-unused-vars
-    const [isLoading, setIsLoading] = useState(false);
-    // eslint-disable-next-line no-unused-vars
-    const [selectedProject, setSelectedProject] = useState('');
+   
+ 
     const [selectedOption, setSelectedOption] = useState(null);
     const [houseArea, setHouseArea] = useState(50);
     const [rangeValue, setRangeValue] = useState(0);
@@ -19,6 +16,19 @@ function Oprosnik({ formData }) {
     const isFormValid = () => {
         return name.trim() !== '' && phoneNumber.trim() !== '';
     };
+// eslint-disable-next-line no-unused-vars
+const isLoading = true;
+// eslint-disable-next-line no-unused-vars
+const setIsLoading = (value) => {
+    // ваш код
+};
+
+// eslint-disable-next-line no-unused-vars
+let selectedProject = null;
+// eslint-disable-next-line no-unused-vars
+const setSelectedProject = (project) => {
+    // ваш код
+};
 
     const formatPhoneNumber = (value) => {
         const phoneNumberRegex = /^\d{10}$/;
@@ -109,13 +119,13 @@ function Oprosnik({ formData }) {
         }
     };
     const renderCheckbox = (isChecked) => {
-        // Implement your checkbox rendering logic here
+     
         return (
             <input type="checkbox" checked={isChecked} />
         );
     };
         return ( <div>
-            {/* Render different steps based on the step state */}
+          
             {step === 1 && (
                 <div className="step-content">
                 <div className="step-title">Из какого материала планируете строительство?</div>
@@ -169,7 +179,7 @@ function Oprosnik({ formData }) {
                     </div>
                 </div>
             )}
-            {/* Repeat for steps 3 to 7 */}
+         
             {step === 3 && (
                 <div className="step-content step active">
                     <div className="step-title">У вас уже есть проект дома?</div>
@@ -195,7 +205,7 @@ function Oprosnik({ formData }) {
 
                 </div>
             )}
-     {/* Repeat for steps 4 to 7 */}
+   
      {step === 4 && (
     <div className="step-content step active">
         <div className="step-title">Укажите удалённость от Владивостока</div>
@@ -227,7 +237,7 @@ function Oprosnik({ formData }) {
     
 )}
 
-                  {/* Repeat for steps 5 to 7 */}
+                  
                 {step === 5 && (
     <div className="step-content step active">
         <div className="step-title">Когда планируете начать строительство?</div>
@@ -257,7 +267,7 @@ function Oprosnik({ formData }) {
         </div>
     </div>
 )}
-  {/* Repeat for steps 6 and 7 */}
+
 {step === 6 && (
     <div className="step-content">
     <div className="step-title">Какую комплектацию хотите?</div>
@@ -333,18 +343,18 @@ function Oprosnik({ formData }) {
             <input type="tel" id="phoneNumber" value={phoneNumber} onChange={handlePhoneNumberChange} />
         </div>
         <div className="step-description">Пожалуйста, укажите ваше имя и номер телефона для отправки расчёта.</div>
-        {/* Активируем кнопку отправки только если поля заполнены */}
+    
         <button onClick={handleFormSubmit} disabled={!isFormValid()}>Отправить</button>
     </div>
 )}
 
 
     
-                {/* Render "Далее" button for all steps except the final step */}
+               
                 {step < 8 && (
                     <button onClick={handleNextStep}>Далее</button>
                 )}
-                {/* Render "Отправить" button only at the final step */}
+               
              
             </div>
         );
