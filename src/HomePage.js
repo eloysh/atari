@@ -6,7 +6,7 @@ const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isBuyFormOpen, setIsBuyFormOpen] = useState(false);
   const [imageIndex, setImageIndex] = useState(0);
-  const [activeTab, setActiveTab] = useState('characteristics'); // Default active tab
+  const [activeTab, setActiveTab] = useState('characteristics'); 
   const [desiredArea, setDesiredArea] = useState('');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -140,17 +140,18 @@ const HomePage = () => {
     <div className="homepage-container">
       <h1 className="homepage-heading"></h1>
 
-      {/* Размещаем компонент Oprosnik перед карточками с фотографиями */}
       <Oprosnik />
 
       <div className="property-list">
-        {/* Ваш код для отображения карточек с фотографиями */}
+       
       </div>
     </div>
     <div className="homepage-container">
-      <h1 className="homepage-heading">Добро пожаловать на главную страницу нашего приложения по недвижимости</h1>
-      <div className="property-list">
-        <h2>Популярные предложения</h2>
+
+  <h1 className="homepage-heading">Добро пожаловать на главную страницу нашего приложения по недвижимости</h1>
+  <div className="property-list">
+    <h2>Популярные предложения</h2>
+    
         <div className="property-cards">
           {properties.map((property, index) => (
             <div key={property.id} className="property-card">
