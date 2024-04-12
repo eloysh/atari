@@ -9,7 +9,7 @@ function Oprosnik({ formData }) {
     const [budget, setBudget] = useState(2000000);
     const [selectedOptionHouse, setSelectedOptionHouse] = useState('');
     const [name, setName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
+    const [phoneNumber] = useState('');
     const [mortgageApproved,] = useState(false);
     const [paymentMethod, setPaymentMethod] = useState([]);
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -41,7 +41,7 @@ function Oprosnik({ formData }) {
         setBudget(parseInt(e.target.value));
     };
 
-    const [hasLand, setHasLand] = useState(null);
+    const [hasLand] = useState(null);
     const handlePaymentMethodChange = (e) => {
         const value = e.target.value;
         if (paymentMethod.includes(value)) {
