@@ -40,47 +40,6 @@ body {
     margin-bottom: 10px;
 }
 
-/* Форма на мобильных устройствах */
-@media (max-width: 768px) {
-    .container {
-        margin: 20px;
-    }
-
-    .step-content {
-        padding: 10px;
-        margin-top: 20px;
-    }
-
-    .step-title {
-        font-size: 20px;
-        margin-bottom: 15px;
-    }
-
-    .options,
-    .radio-group,
-    .checkbox-group {
-        flex-direction: column;
-    }
-
-    .option,
-    .radio-group label,
-    .checkbox-group label {
-        margin-bottom: 15px;
-    }
-
-    .option img {
-        width: 100%;
-        height: 100%;
-        border-radius: 8px;
-        margin-bottom: 10px;
-    }
-
-    button {
-        font-size: 16px;
-        padding: 12px 24px;
-        margin-top: 20px;
-    }
-}
 
 /* Стили для кнопок */
 button {
@@ -126,11 +85,6 @@ input[type="checkbox"] {
     display: flex;
 }
 
-.option {
-    margin-right: 10px;
-    cursor: pointer;
-    position: relative;
-}
 
 .option img {
     width: 150px;
@@ -162,16 +116,6 @@ input[type="checkbox"] {
     margin-top: 20px;
 }
 
-.range-legend {
-    display: flex !important;
-    justify-content: space-between !important;
-    margin-bottom: 10px !important;
-}
-
-.legend-point {
-    flex: 1 !important;
-    text-align: center !important;
-}
 
 
 .range-outer {
@@ -269,53 +213,13 @@ input[type="radio"] {
     flex-wrap: wrap;
 }
 
-.option {
-    flex: 0 0 calc(20% - 20px); /* Распределение по 5 столбцам с отступами между ними */
-    margin-right: 20px;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
 
-.option img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
 
-.option span {
-    display: block;
-    text-align: center;
-}
 
-/* Для мобильных устройств */
-@media (max-width: 768px) {
-    .step-content {
-        padding: 10px;
-        margin-top: 20px;
-    }
 
-    .step-title {
-        font-size: 20px;
-        margin-bottom: 15px;
-    }
-
-    .quiz-fields {
-        flex-direction: column;
-    }
-
-    .option {
-        flex: 1 0 auto;
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
-}
 /* Стили для контейнера шага */
-.step-content {
-    text-align: center; /* Центрирование контента */
-    padding: 20px; /* Отступы вокруг контента */
-}
 
+ 
 /* Стили для заголовка шага */
 .step-title {
     font-size: 24px; /* Размер шрифта заголовка */
@@ -334,7 +238,15 @@ input[type="radio"] {
     display: flex; /* Расположение иконок в ряд */
     justify-content: center; /* Выравнивание по центру */
 }
-
+.checkmark {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 24px;
+    color: #007bff;
+    display: inline-block;
+    line-height: 1;
+}
 .social-icons a {
     display: inline-block; /* Отображение в виде блока */
     margin: 0 10px; /* Внешний отступ между иконками */
@@ -349,4 +261,43 @@ input[type="radio"] {
 
 .social-icons img:hover {
     transform: scale(1.1); /* Увеличение размера при наведении */
+}
+/* Для мобильных устройств */
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .options {
+        flex-wrap: wrap; /* Разрешаем перенос элементов на новую строку */
+    }
+
+    .option {
+        flex-basis: calc(50% - 20px); /* Ширина фотографии с учетом отступов */
+        margin-right: 20px; /* Отступ между фотографиями */
+        margin-bottom: 20px; /* Отступ снизу */
+    }
+}
+.step-content {
+    display: flex; /* Используем flexbox для распределения элементов */
+    flex-wrap: wrap; /* Позволяем элементам переноситься на следующую строку */
+    justify-content: space-between; /* Распределяем элементы равномерно с промежутками между ними */
+    margin-bottom: 20px; /* Добавляем отступ снизу для выравнивания с остальным контентом */
+}
+
+
+.option {
+    width: calc(33.33% - 20px); /* Ширина каждой фотографии будет одна треть от ширины контейнера с учетом отступов */
+    margin-bottom: 20px; /* Отступ снизу для фотографий */
+    position: relative; /* Необходимо для корректного отображения чекбоксов */
+    cursor: pointer; /* Делаем указатель при наведении на фотографии */
+}
+
+.option img {
+    width: 100%; /* Делаем изображения 100% ширины контейнера */
+    height: auto; /* Сохраняем соотношение сторон изображений */
+    border-radius: 8px; /* Делаем скругление углов для красоты */
+}
+
+.option span {
+    display: block; /* Размещаем текст под изображением */
+    text-align: center; /* Выравниваем текст по центру */
+    margin-top: 5px; /* Отступ сверху от изображения */
 }
