@@ -1,4 +1,3 @@
-// Menu.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Menu.css';
@@ -13,7 +12,9 @@ const Menu = () => {
 
   return (
     <div>
-      <img src={logoImage} alt="Логотип" className="menu-logo" />
+      <Link to="/">
+        <img src={logoImage} alt="Логотип" className="menu-logo" />
+      </Link>
       <div className={`hamburger-menu ${showMobileMenu ? 'active' : ''}`} onClick={toggleMobileMenu}>
         <div className="line"></div>
         <div className="line"></div>

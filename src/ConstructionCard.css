@@ -1,0 +1,17 @@
+.construction-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .construction-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .construction-card h3,
+  .construction-card p {
+    margin: 5px 0;
+  }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './HomePage.css';
 import Oprosnik from './oprosnik';
 import Straniza from './Straniza';
+
 const HomePage = () => {
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -153,7 +154,7 @@ const HomePage = () => {
     </div>
       <div className="homepage-container">
 
-      <h1 className="homepage-heading">Добро пожаловать на главную страницу нашего приложения по недвижимости</h1>
+      <h1 className="homepage-heading">КАТАЛОГ ДОМОВ ОТ НАШИХ ЗАСТРОЙЩИКОВ</h1>
 
         <div className="property-list">
           <h2>Популярные предложения</h2>

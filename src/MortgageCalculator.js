@@ -2,18 +2,20 @@ import React, { useState } from 'react';
 import './MortgageCalculator.css';
 
 function MortgageCalculator() {
-  const [mortgageType, setMortgageType] = useState('');
-  const [loanAmount, setLoanAmount] = useState('');
-  const [annualInterestRate, setAnnualInterestRate] = useState('');
-  const [loanTermYears, setLoanTermYears] = useState('');
+
+ 
   const [monthlyPayment, setMonthlyPayment] = useState('');
   const [totalPayment, setTotalPayment] = useState('');
   const [totalInterest, setTotalInterest] = useState('');
+  const [mortgageType, setMortgageType] = useState('ДВ');
 
   const handleMortgageTypeChange = (event) => {
     setMortgageType(event.target.value);
   };
-
+  const [loanAmount, setLoanAmount] = useState(0);
+  const [annualInterestRate, setAnnualInterestRate] = useState(2.6);
+  const [loanTermYears, setLoanTermYears] = useState(30);
+  
   const handleInputChange = (event, setter) => {
     setter(event.target.value);
   };
