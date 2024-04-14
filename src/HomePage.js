@@ -261,50 +261,69 @@ const HomePage = () => {
         )}
       </div>
       <footer className="footer">
+      <div className="footer-section">
+      <button className="logo-link" onClick={() => window.scrollTo(0, 0)}>
+  <img src="./logo.jpg" alt="Логотип" />
+</button>
+</div>
+
   <div className="footer-section">
-    <img src="logo1.png" alt="Логотип" />
-  </div>
-  <div className="footer-section">
-    <h4>Недвижимость</h4>
+ <h4 style={{ color: 'blue', fontFamily: 'cursive' }}>Агенство недвижимости</h4>
+
     <ul>
       <li><a href="/search">О компании</a></li>
       <li><a href="property/:id">Контакты</a></li>
-      <li><a href="mortgage">Дома</a></li>
+      
       <li><a href="real-estate-catalog">Новостройки</a></li>
+      <li><a href="mortgage">Дома от застройщиков</a></li>
     </ul>
   </div>
-  <div className="footer-section">
-    <h4>Контакты</h4>
-    <p>Телефон: +7 (123) 456-78-90</p>
+  <div className="footer-section contact-info">
+   
+    <div>
+      <h4>Контакты</h4>
+      <p>Телефон: +7 (984) 192-50-69</p>
+      <p>Email: eloysh8814@gmail.com</p>
+      <p>Адрес: г. Владивосток, ул. Светланская, дом 65</p>
+    </div>
   </div>
-  <div className="contact">
-    <h3>Контакты</h3>
-    <p>Телефон: +7 (984) 192-50-69</p>
-    <p>Email: eloysh8814@gmail.com</p>
-    <p>Адрес: г. Владивосток, ул. Светланская, дом 65</p>
+  
+  <div className="map-container">
+  <iframe
+  title="Location Map"
+  width="100%"
+  height="200"
+  frameBorder="0"
+  style={{ border: '0' }}
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2961.6122090024026!2d132.18651827426833!3d43.35233584086432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5fb3b05d61f64e27%3A0xe5253588e6436795!2s%D1%83%D0%BB.+%D0%A4%D1%80%D1%83%D0%BD%D0%B7%D0%B5%2C%2072%2C%20%D0%90%D1%80%D1%82%D0%B5%D0%BC%2C%20%D0%9F%D1%80%D0%B8%D0%BC%D0%BE%D1%80%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BA%D1%80%D0%B0%D0%B9%2C%20692760!5e0!3m2!1sru!2sru!4v1618560779283!5m2!1sru!2sru"
+  allowFullScreen
+></iframe>
+
+
+
+
+
+
   </div>
   
   <div className="chat-buttons-container">
-            <button className="whatsapp-button" onClick={openWhatsApp}>
-                <img src="whatsapp.png" alt="WhatsApp" width="50" height="50"/>
-                
-            </button>
-            <button className="telegram-button" onClick={openTelegram}>
-                <img src="telegram.png" alt="Telegram" width="50" height="50"/>
-             
-            </button>
-            <button className="instagram-button" onClick={openInstagram}>
-                <img src="instagram.svg" alt="Instagram" width="50" height="50"/>
-              
-            </button>
-            <button className="telegram-button" onClick={openTelegramcanal}>
-                <img src="telegram.png" alt="Telegram" width="50" height="50"/>
-          
-            </button>
-        </div>
- 
+    <button className="whatsapp-button" onClick={openWhatsApp}>
+      <img src="whatsapp.png" alt="WhatsApp" width="50" height="50"/>
+    </button>
+    <button className="telegram-button" onClick={openTelegram}>
+      <img src="telegram.png" alt="Telegram" width="50" height="50"/>
+    </button>
+    <button className="instagram-button" onClick={openInstagram}>
+      <img src="instagram.svg" alt="Instagram" width="50" height="50"/>
+    </button>
+    <button className="telegram-button" onClick={openTelegramcanal}>
+      <img src="telegram.png" alt="Telegram" width="50" height="50"/>
+    </button>
+  </div>
 </footer>
 </div>
+
+
 
   );
 };

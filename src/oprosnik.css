@@ -83,6 +83,11 @@ input[type="checkbox"] {
 
 .options {
     display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* align-content: stretch; */
+    justify-content: space-evenly;
+    align-items: stretch;
 }
 
 

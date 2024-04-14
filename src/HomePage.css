@@ -52,17 +52,19 @@
   cursor: pointer;
 }
 
-
-
 .modal-content {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
-  position: relative;
-  max-width: 50%;
+  position: fixed;
+  top: 50%; /* Разместить верхний край элемента в середине экрана */
+  left: 50%; /* Разместить левый край элемента в середине экрана */
+  transform: translate(-50%, -50%); /* Переместить элемент на половину его собственной ширины и высоты влево и вверх, соответственно */
+  max-width: 50%; /* Максимальная ширина элемента */
   overflow-y: auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
+
 
 .close {
   position: absolute;
@@ -74,25 +76,27 @@
 
 .gallery {
   position: relative;
+  text-align: center; /* Выравнивание содержимого по центру */
 }
 
 .gallery img {
-  width: 80%;
-  height: auto;
+  display: inline-block; /* Сделать изображение блочным элементом */
+  max-width: 100%; /* Максимальная ширина изображения равна ширине контейнера */
+  height: auto; /* Автоматическая высота, чтобы сохранить соотношение сторон */
   border-radius: 5px;
+  margin-top: 10px;
 }
+
 
 .prev-btn,
 .next-btn {
   position: absolute;
-
-  transform: translateY(-50%);
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
   font-size: 20px;
   color: #333;
   cursor: pointer;
-  padding: 10px;
+  padding: 15px; /* Увеличиваем размер кнопки */
   border-radius: 50%;
   transition: background-color 0.3s;
 }
@@ -103,24 +107,32 @@
 }
 
 .prev-btn {
-  left: 5%; /* Позиционирование стрелочки влево */
-  transform: translate(-50%, -50%); /* Корректировка позиции стрелочки */
+  left: 5%;
+  top: 50%; /* Позиционируем по вертикали вверху */
+  transform-origin: center; /* Устанавливаем точку поворота по центру */
+  transform: translateY(-50%) rotate(0deg); /* Поворачиваем на 45 градусов и сдвигаем вверх на 50% */
 }
 
 .next-btn {
-  right: 5%; /* Позиционирование стрелочки вправо */
-  transform: translate(50%, -50%); /* Корректировка позиции стрелочки */
+  right: 5%;
+  top: 50%; /* Позиционируем по вертикали вверху */
+  transform-origin: center; /* Устанавливаем точку поворота по центру */
+  transform: translateY(-50%) rotate(-0deg); /* Поворачиваем на -45 градусов и сдвигаем вверх на 50% */
 }
+
 
 
 .property-info {
   margin-top: 20px;
 }
-
 .tabs {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
 }
 
 .tabs button {
@@ -182,14 +194,20 @@
     padding: 8px; /* Уменьшение отступов кнопок */
   }
 
-  .property-info {
-    margin-top: 10px; /* Уменьшение верхнего отступа информации о недвижимости */
+  .modal-content {
+    width: 90%; /* Уменьшаем ширину для мобильных устройств */
+    height: auto; /* Позволяет содержимому определять высоту */
   }
-
+  
   .tabs {
-    flex-direction: column; /* Отображение вкладок в столбец */
-    align-items: center; /* Выравнивание вкладок по центру */
-  }
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    align-items: center;
+}
 
   .tabs button {
     margin-bottom: 10px; /* Добавление отступа между вкладками */
@@ -212,45 +230,27 @@
 /* Your existing CSS styles */
 .modal {
   display: flex;
-  justify-content: center;
-  align-items: center;
+
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50px;
+  left: 0px;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000; /* Lower z-index for the modal */
+
+  z-index: 1000;
+  flex-direction: row;
+  align-content: center;
 }
 .hamburger-menu.active {
   z-index: 2001; /* Higher z-index to bring it to the forefront */
 }
-
-/* Your existing CSS styles */
-.modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2000; /* Lower z-index for the modal */
-}
 .footer {
+  background-image: url('31.jpg');
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  background-image: url('./13.jpg'); /* Replace 'your-image-url.jpg' with the path to your background image */
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  padding: 30px 20px;
-  flex-direction: column-reverse;
-  position: relative;
-  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 20px;
 }
 
 .footer-section {
@@ -258,67 +258,166 @@
   margin-bottom: 20px;
 }
 
-.footer-section img {
-  max-width: 100%;
-  height: auto;
+.footer-logo img {
+  width: 100px;
 }
 
-.contact, .social {
-  flex: 1 1 100%;
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.contact h3, .social h3 {
+.footer-links li {
+  margin-bottom: 5px;
+}
+
+.contact-info div {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.map-container {
+  flex-basis: 100%;
+}
+
+.chat-buttons-container {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.whatsapp-button,
+.telegram-button,
+.instagram-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.whatsapp-button img,
+.telegram-button img,
+.instagram-button img {
+  width: 50px;
+  height: 50px;
+}
+/* Стили для списка */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Стили для ссылок в списке */
+ul li {
   margin-bottom: 10px;
 }
 
-.contact p, .social p {
-  margin: 5px 0;
+ul li a {
+  text-decoration: none;
+  color: #ebe9e9; /* Цвет текста ссылок */
+  font-size: 16px; /* Размер шрифта */
+  transition: color 0.3s; /* Плавное изменение цвета при наведении */
 }
 
-.social-icons {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+ul li a:hover {
+  color: #0084ff; /* Цвет текста при наведении */
+}
+/* Стили для контейнера с контактными данными */
+.contact-info div {
+  background-color: #f9f9f9; /* Цвет фона */
+  padding: 20px; /* Внутренние отступы */
+  border-radius: 8px; /* Скругление углов */
+  box-shadow: 0 0 10px rgba(4, 81, 247, 0.1); /* Тень */
 }
 
-.icon-link {
-  margin: 0 10px;
-  font-size: 24px;
-  color: #fff;
-  transition: transform 0.3s ease;
+/* Стили для заголовка контактов */
+.contact-info h4 {
+  font-size: 20px; /* Размер шрифта заголовка */
+  margin-bottom: 10px; /* Отступ снизу */
+  color: #0964db; /* Цвет текста заголовка */
 }
 
-.icon-link:hover {
-  transform: translateY(-5px);
+/* Стили для контактных данных */
+.contact-info p {
+  margin-bottom: 5px; /* Отступ снизу */
+  color: #666; /* Цвет текста контактных данных */
+}
+.logo-link {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
 }
 
-/* Animation */
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+.logo-link img {
+  width: 100px; /* Замените на ваш желаемый размер */
+  height: auto; /* Позволяет изображению масштабироваться пропорционально */
+}
+/* Общие стили для карты */
+.map-container {
   width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  margin-top: 20px; /* Добавим немного отступа сверху */
 }
 
-.footer:hover::before {
-  opacity: 1;
+/* Стили для мобильной адаптации */
+@media only screen and (max-width: 600px) {
+  .footer {
+    background-image: url(30.jpg);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+    flex-direction: column;
+    align-content: flex-start;
 }
-
-/* Media Queries */
-@media screen and (max-width: 768px) {
-  .footer-section {
-    flex: 1 1 50%;
+  .footer-section.contact-info {
+    order: -1; /* Помещаем блок с контактной информацией выше */
+  }
+  
+  .map-container {
+    height: 150px; /* Уменьшаем высоту карты */
   }
 }
+/* Общие стили для карты */
+.map-container {
+  width: 100%;
+  margin-top: 20px; /* Добавим немного отступа сверху */
+}
 
-@media screen and (max-width: 480px) {
-  .footer-section {
-    flex: 1 1 100%;
+/* Стили для мобильной адаптации */
+@media only screen and (max-width: 600px) {
+  .footer-section.contact-info {
+    order: 1; /* Помещаем блок с контактной информацией под логотип */
+  }
+  
+  .chat-buttons-container {
+    order: -1; /* Помещаем блок с кнопками соц сетей над картой */
+  }
+  
+  .map-container {
+    height: 150px; /* Уменьшаем высоту карты */
+  }
+}
+/* Общие стили для карты */
+.map-container {
+  width: 100%;
+  margin-top: 20px; /* Добавим немного отступа сверху */
+}
+
+/* Стили для мобильной адаптации */
+@media only screen and (max-width: 600px) {
+  .footer-section.contact-info {
+    order: 1; /* Помещаем блок с контактной информацией под логотип */
+  }
+  
+  .chat-buttons-container {
+    order: -1; /* Помещаем блок с кнопками соц сетей над картой */
+  }
+  
+  .map-container {
+    height: 150px; /* Уменьшаем высоту карты */
   }
 }

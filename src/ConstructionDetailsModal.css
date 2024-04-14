@@ -1,15 +1,23 @@
 .construction-details-modal {
-  position: fixed;
+  
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.95); /* Полупрозрачный белый цвет */
   padding: 20px;
-  border: 2px solid #ccc;
   border-radius: 8px;
-  max-width: 80%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 60%;
+  width: 60%;
   max-height: 80%;
   overflow: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.construction-details-modal.open {
+  opacity: 1;
 }
 
 .modal-content {
@@ -21,22 +29,19 @@
   top: 10px;
   right: 10px;
   cursor: pointer;
+  font-size: 24px;
 }
 
 .gallery {
-  text-align: center;
-}
-
-.gallery img {
-  max-width: 100%;
-  height: auto;
+  position: relative; /* Для позиционирования кнопок внутри галереи */
+  text-align: center; /* Для выравнивания кнопок по центру */
 }
 
 .prev-btn,
 .next-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position: absolute; /* Абсолютное позиционирование относительно родительского элемента */
+  top: 50%; /* Расположение по вертикали на 50% от верхнего края галереи */
+  transform: translateY(-50%); /* Сдвиг кнопок вверх на 50% от их собственной высоты, чтобы они оказались по центру */
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
@@ -45,15 +50,41 @@
   transition: background-color 0.3s;
 }
 
-.prev-btn:hover,
-.next-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
 .prev-btn {
-  left: 10px;
+  left: 5%;
+  transform: translate(-50%, -50%);
+}
+.next-btn {
+  right: 170px; /* Расположение кнопки "вперед" справа */
 }
 
-.next-btn {
-  right: 10px;
+.property-info {
+  margin-top: 20px;
+}
+
+/* Анимация */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-enter {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.fade-exit {
+  animation: fadeOut 0.3s ease-in-out;
 }

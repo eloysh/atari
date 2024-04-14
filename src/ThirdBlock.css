@@ -47,11 +47,11 @@
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 280px;
-  height: 306px;
+  height: 200px;
 }
 
 .second-block {
-  height: 306px;
+
   width: 280px;
   position: relative;
   overflow: hidden;
@@ -67,3 +67,15 @@
     margin: 40px;
   }
 }}
+@media screen and (max-width: 768px){
+
+  .second-block {
+    top: 80px;
+    width: 280px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background-image: url(http://localhost:3000/static/media/41.31fd99f543960a355f97.png);
+    height: 210px;
+  }
+  }

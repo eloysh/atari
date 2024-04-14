@@ -1,36 +1,82 @@
-.construction-card {
+/* Для формы */
+.construction-details-modal {
+  width: 600px; /* Ширина формы равна ширине экрана */
+
+
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Затемнение фона */
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-bottom: 20px;
+  justify-content: center;
 }
 
-.construction-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.modal-content {
+  width: 80%; /* Ширина контента в форме */
+
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Для карточки недвижимости внутри формы */
+.construction-card {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .construction-card img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
-.construction-card-details {
-  text-align: center;
-}
-
-.construction-card h2 {
-  margin-top: 0;
-  margin-bottom: 8px;
+.construction-card h3 {
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem;
+  color: #333;
 }
 
 .construction-card p {
-  margin: 0;
+  margin: 0.5rem 0;
+  color: #666;
 }
+
+/* Медиа-запросы для адаптивности */
+@media screen and (max-width: 768px) {
+  .construction-card {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Для мобильных устройств */
+@media screen and (max-width: 768px) {
+  .construction-card {
+    width: calc(50% - 20px); /* По 2 карточки в ряд */
+    margin: 10px;
+  }
+}
+
+/* Для планшетов и десктопов */
+@media screen and (min-width: 769px) {
+  .construction-card {
+    width: calc(25% - 20px); /* По 4 карточки в ряд */
+    margin: 10px;
+  }
+}
+.construction-details-modal {
+  width: 340px; /* Ширина формы занимает всю доступную ширину */
+  height: 600px; /* Высота формы занимает всю доступную высоту */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Затемнение фона */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

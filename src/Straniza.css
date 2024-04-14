@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  max-width: 1200px;
+  max-width: 960px;
   height: 350px;
   margin: 0 auto;
   padding: 30px;
@@ -178,18 +178,6 @@
   background-color: #1575d4;
   color: #fff;
 }
-.container {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  max-width: 1200px;
-  height: 350px;
-  margin: 0 auto;
-  padding: 30px;
-  align-items: center;
-  align-content: center;
-  margin-top: 0px;
-}
 
 .first-block {
   background-image: url('./13.jpg');
@@ -230,5 +218,7 @@
     flex-basis: 100%;
     margin: 40px;
     margin-bottom: 70px;
+    
   }
+  
 }

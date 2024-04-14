@@ -20,7 +20,11 @@ const PropertyCard = ({ property, onTitleClick, onCloseForm }) => {
         <h3 onClick={handleTitleClick}>{property.title}</h3>
         <p>{property.description}</p>
         <p>Цена: {property.price}</p>
-        
+        <PropertyCard 
+  property={propertyData} 
+  onTitleClick={handleTitleClick} 
+  onCloseForm={handleCloseForm} 
+/>
       </div>
     </div>
   );
