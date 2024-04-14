@@ -240,17 +240,31 @@
   z-index: 2000; /* Lower z-index for the modal */
 }
 .footer {
-  background-color: #333;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-image: url('./13.jpg'); /* Replace 'your-image-url.jpg' with the path to your background image */
+  background-size: cover;
+  background-position: center;
   color: #fff;
   padding: 30px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column-reverse;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-section {
+  flex: 1 1 25%;
+  margin-bottom: 20px;
+}
+
+.footer-section img {
+  max-width: 100%;
+  height: auto;
 }
 
 .contact, .social {
   flex: 1 1 100%;
-  margin-bottom: 20px;
 }
 
 .contact h3, .social h3 {
@@ -278,32 +292,33 @@
   transform: translateY(-5px);
 }
 
-/* Медиа-запрос для мобильных устройств */
-@media screen and (max-width: 600px) {
-  .footer {
-    padding: 20px 10px;
-  }
+/* Animation */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
 
-  .contact, .social {
+.footer:hover::before {
+  opacity: 1;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .footer-section {
+    flex: 1 1 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-section {
     flex: 1 1 100%;
-    margin-bottom: 10px;
-  }
-
-  .contact h3, .social h3 {
-    margin-bottom: 5px;
-  }
-
-  .icon-link {
-    font-size: 20px;
-  }
-}
-.icon-link {
-  display: inline-block;
-  margin-right: 10px; /* Adjust margin as needed */
-}
-
-@media (max-width: 768px) {
-  .icon-link {
-    margin-right: 5px; /* Adjust margin for smaller screens */
   }
 }

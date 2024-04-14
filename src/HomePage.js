@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import './HomePage.css';
 import Oprosnik from './oprosnik';
 import Straniza from './Straniza';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
 
 
 
@@ -17,7 +16,23 @@ const HomePage = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [haveProject, setHaveProject] = useState('');
+  const openWhatsApp = () => {
+    window.open('https://api.whatsapp.com/send?phone=79510050002', '_blank');
+  };
 
+  const openInstagram = () => {
+    window.open('https://www.instagram.com/buying_a_property?igsh=MWY3NnN2dTdqemQ2Zw==', '_blank');
+  };
+
+  const openTelegram = () => {
+    window.open('https://t.me/+79510050002', '_blank');
+  };
+
+  const openTelegramcanal = () => {
+    window.open('https://t.me/buying_a_property', '_blank');
+  };
+
+ 
   const properties = [
 
 
@@ -140,7 +155,7 @@ const HomePage = () => {
   const handleCloseBuyForm = () => {
     setIsBuyFormOpen(false);
   };
-
+ 
   return (
     <div>
     <div className="container">
@@ -161,7 +176,7 @@ const HomePage = () => {
       <h1 className="homepage-heading">КАТАЛОГ ДОМОВ ОТ НАШИХ ЗАСТРОЙЩИКОВ</h1>
 
         <div className="property-list">
-          <h2>Популярные предложения</h2>
+     
 
           <div className="property-cards">
             {properties.map((property, index) => (
@@ -245,35 +260,54 @@ const HomePage = () => {
           </div>
         )}
       </div>
-      {/* Футер с контактами и социальными сетями */}
       <footer className="footer">
-     
+  <div className="footer-section">
+    <img src="logo1.png" alt="Логотип" />
+  </div>
+  <div className="footer-section">
+    <h4>Недвижимость</h4>
+    <ul>
+      <li><a href="/search">О компании</a></li>
+      <li><a href="property/:id">Контакты</a></li>
+      <li><a href="mortgage">Дома</a></li>
+      <li><a href="real-estate-catalog">Новостройки</a></li>
+    </ul>
+  </div>
+  <div className="footer-section">
+    <h4>Контакты</h4>
+    <p>Телефон: +7 (123) 456-78-90</p>
+  </div>
   <div className="contact">
     <h3>Контакты</h3>
-    <p>Телефон: +7 (XXX) XXX-XX-XX</p>
-    <p>Email: example@example.com</p>
-    <p>Адрес: г. Ваш город, ул. Ваша улица, дом Ваш номер</p>
+    <p>Телефон: +7 (984) 192-50-69</p>
+    <p>Email: eloysh8814@gmail.com</p>
+    <p>Адрес: г. Владивосток, ул. Светланская, дом 65</p>
   </div>
-  <div className="social">
-    <h3>Мы в социальных сетях</h3>
-    <div className="social-icons">
-      <a href="ссылка на ваш профиль в Facebook" className="icon-link">
-        <FontAwesomeIcon icon={faFacebookF} />
-      </a>
-      <a href="ссылка на ваш профиль в Instagram" className="icon-link">
-        <FontAwesomeIcon icon={faInstagram} />
-      </a>
-      <a href="ссылка на ваш профиль в Twitter" className="icon-link">
-        <FontAwesomeIcon icon={faTwitter} />
-      </a>
-    </div>
-  </div>
+  
+  <div className="chat-buttons-container">
+            <button className="whatsapp-button" onClick={openWhatsApp}>
+                <img src="whatsapp.png" alt="WhatsApp" width="50" height="50"/>
+                
+            </button>
+            <button className="telegram-button" onClick={openTelegram}>
+                <img src="telegram.png" alt="Telegram" width="50" height="50"/>
+             
+            </button>
+            <button className="instagram-button" onClick={openInstagram}>
+                <img src="instagram.svg" alt="Instagram" width="50" height="50"/>
+              
+            </button>
+            <button className="telegram-button" onClick={openTelegramcanal}>
+                <img src="telegram.png" alt="Telegram" width="50" height="50"/>
+          
+            </button>
+        </div>
+ 
 </footer>
+</div>
 
-      </div>
-    
-    
   );
 };
+
 
 export default HomePage;

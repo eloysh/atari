@@ -5,7 +5,7 @@ import './index.css';
 import HomePage from './HomePage';
 import SearchResultPage from './SearchResultsPage';
 import PropertyDetailPage from './PropertyDetailsPage';
-import ContactPage from './ContactPage';
+
 import AuthPage from './AuthPage';
 import UserProfilePage from './UserProfilePage';
 import Menu from './Menu';
@@ -20,7 +20,7 @@ ReactDOM.render(
         <Route exact path="/" element={<HomePage />} />
         <Route exact path="/search" element={<SearchResultPage />} />
         <Route path="/property/:id" element={<PropertyDetailPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+       
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/profile" element={<UserProfilePage />} />
         <Route path="/mortgage" element={<MortgageCalculator />} />

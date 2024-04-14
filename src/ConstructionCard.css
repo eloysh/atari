@@ -1,17 +1,36 @@
 .construction-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 10px;
-    margin-bottom: 20px;
-    cursor: pointer;
-  }
-  
-  .construction-card img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .construction-card h3,
-  .construction-card p {
-    margin: 5px 0;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.construction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.construction-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.construction-card-details {
+  text-align: center;
+}
+
+.construction-card h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.construction-card p {
+  margin: 0;
+}
