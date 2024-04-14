@@ -239,3 +239,71 @@
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 2000; /* Lower z-index for the modal */
 }
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 30px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact, .social {
+  flex: 1 1 100%;
+  margin-bottom: 20px;
+}
+
+.contact h3, .social h3 {
+  margin-bottom: 10px;
+}
+
+.contact p, .social p {
+  margin: 5px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.icon-link {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.icon-link:hover {
+  transform: translateY(-5px);
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .contact, .social {
+    flex: 1 1 100%;
+    margin-bottom: 10px;
+  }
+
+  .contact h3, .social h3 {
+    margin-bottom: 5px;
+  }
+
+  .icon-link {
+    font-size: 20px;
+  }
+}
+.icon-link {
+  display: inline-block;
+  margin-right: 10px; /* Adjust margin as needed */
+}
+
+@media (max-width: 768px) {
+  .icon-link {
+    margin-right: 5px; /* Adjust margin for smaller screens */
+  }
+}

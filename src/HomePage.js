@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import './HomePage.css';
 import Oprosnik from './oprosnik';
 import Straniza from './Straniza';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+
 
 const HomePage = () => {
   const [selectedProperty, setSelectedProperty] = useState(null);
@@ -241,8 +245,33 @@ const HomePage = () => {
           </div>
         )}
       </div>
-      
+      {/* Футер с контактами и социальными сетями */}
+      <footer className="footer">
+     
+  <div className="contact">
+    <h3>Контакты</h3>
+    <p>Телефон: +7 (XXX) XXX-XX-XX</p>
+    <p>Email: example@example.com</p>
+    <p>Адрес: г. Ваш город, ул. Ваша улица, дом Ваш номер</p>
+  </div>
+  <div className="social">
+    <h3>Мы в социальных сетях</h3>
+    <div className="social-icons">
+      <a href="ссылка на ваш профиль в Facebook" className="icon-link">
+        <FontAwesomeIcon icon={faFacebookF} />
+      </a>
+      <a href="ссылка на ваш профиль в Instagram" className="icon-link">
+        <FontAwesomeIcon icon={faInstagram} />
+      </a>
+      <a href="ссылка на ваш профиль в Twitter" className="icon-link">
+        <FontAwesomeIcon icon={faTwitter} />
+      </a>
     </div>
+  </div>
+</footer>
+
+      </div>
+    
     
   );
 };

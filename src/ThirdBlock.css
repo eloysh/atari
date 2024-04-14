@@ -11,8 +11,7 @@
   }
   
   .background-image {
-    width: 280px;
-    height: 370px;
+   
     background-size: cover;
     background-position: center;
     border-radius: 8px;
@@ -60,15 +59,6 @@
   background-image: url('./41.png');
 }
 
-.background-image {
-  width: 280px;
-  height: 370px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-}
 
 @media screen and (max-width: 768px) {
   .first-block,

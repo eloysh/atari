@@ -23,7 +23,7 @@ const Straniza = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Интервал смены изображений в миллисекундах (здесь каждые 3 секунды)
+    }, 2000); // Интервал смены изображений в миллисекундах (здесь каждые 3 секунды)
   
     return () => clearInterval(interval); // Очистка интервала при размонтировании компонента
   }, [images.length]); // Добавлен images.length в зависимости
